@@ -13,7 +13,7 @@ pipeline {
                 checkout scm
 
                 echo "Compiling and packaging the project..."
-                sh 'mvn clean package'
+                bat 'mvn clean package'
 
                 echo "Stashing the JAR artifact..."
                 stash name: 'jar-artifact', includes: 'rest-api/target/*.jar'
@@ -29,7 +29,7 @@ pipeline {
                 unstash 'workspace-for-testing'
 
                 echo "Running tests..."
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
