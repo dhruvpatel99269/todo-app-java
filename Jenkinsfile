@@ -1,7 +1,7 @@
 // Declarative Pipeline
 pipeline {
     // No global agent; each stage will define its own.
-    agent none
+    agent any
 
     // Environment variables can be defined for the entire pipeline.
     environment {
